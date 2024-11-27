@@ -1,39 +1,50 @@
-.container{
-    display:flex;
+.container {
+    display: flex;
     flex-direction: row;
     margin-top: 2rem;
-    font-size: 2rem;
     justify-content: space-around;
-    
+    font-size: 2rem;
 }
 
-#message{
-    display: flex;
-    justify-content: center;
-    size: 2rem;
-    color: red;
-    height: 2.5rem; 
-    /* et ei kaoks kui tyhi */
-    margin-top: 2rem;
-}
-
-#word{
-    letter-spacing: 0.2rem;
+#word {
+    letter-spacing: 0.4rem;
     word-spacing: 0.8rem;
 }
 
-#alphabet{
+#message {
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 2rem;
+    color: red;
+    height: 2.5rem;
+    margin-top: 2rem;
 }
 
-.letter{
-    height: 32px;
+#alphabet {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    width: 400px;
+    margin: 2rem auto;
+}
+
+.letter {
     width: 32px;
+    height: 32px;
     border: 1px solid black;
     margin: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.correct-letter {
+    background-color: green;
+    font-weight: bold;
+}
+
+.wrong-letter {
+    background-color: red;
+    font-weight: bold;
 }
