@@ -1,0 +1,39 @@
+.container{
+    display:flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    font-size: 2rem;
+    justify-content: space-around;
+    
+}
+
+#message{
+    display: flex;
+    justify-content: center;
+    size: 2rem;
+    color: red;
+    height: 2.5rem; 
+    /* et ei kaoks kui tyhi */
+    margin-top: 2rem;
+}
+
+#word{
+    letter-spacing: 0.2rem;
+    word-spacing: 0.8rem;
+}
+
+#alphabet{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.letter{
+    height: 32px;
+    width: 32px;
+    border: 1px solid black;
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
