@@ -16,7 +16,7 @@
     justify-content: center;
     font-size: 2rem;
     color: red;
-    height: 2.5rem;
+    height: 5 rem;
     margin-top: 2rem;
 }
 
@@ -37,14 +37,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .correct-letter {
-    background-color: green;
+    color: darkblue;
+    background-color: lightblue;
     font-weight: bold;
 }
 
 .wrong-letter {
-    background-color: red;
+    background-color: lightgray;
     font-weight: bold;
+    color: gray;
+    text-decoration: line-through;
+
 }
