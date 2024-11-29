@@ -3,15 +3,43 @@ const gameBoardTable = document.getElementById('game-board');
 const height = 20;
 const width = 30;
 
-let foodY, foodX;
+const food = ['A', 'B', 'C', 'D'];
+
+let foodY, foodX, foodIndex;
+let direction = 'n';
+const speed = 200;
 let snake = initSnake();
 
+document.addEventListener('keydown', e => {
+    switch (e.key) {
+        case 'ArrowUp':
+            direction = 'n';
+            break;
+        case 'ArrowDown':
+            direction = 's'
+            break;
+        case 'ArrowLeft':
+            direction = 'w';
+            break;
+        case 'ArrowRight':
+            direction = 'e';
+            break;
+    }
+});
+
+const intervalId = setInterval(runGame, speed)
+
 generateFood();
-drawGameboard();
+
+function runGame() {
+    updateSnake();
+    drawGameboard();
+}
 
 function generateFood() {
     foodY = Math.floor(Math.random() * height);
     foodX = Math.floor(Math.random() * width);
+    foodIndex = Math.floor(Math.random() * food.length);
 }
 
 function initSnake() {
@@ -21,8 +49,35 @@ function initSnake() {
     return [snakeY + '_' + snakeX];
 }
 
+function updateSnake() {
+    const head = snake[0].split('_');
+
+    let newY = parseInt(head[0]);
+    let newX = parseInt(head[1]);
+
+    switch (direction) {
+        case 'n':
+            newY--;
+            break;
+        case 's':
+            newY++;
+            break;
+        case 'w':
+            newX--;
+            break;
+        case 'e':
+            newX++;
+            break;
+    }
+
+    snake.unshift(newY + '_' + newX);
+    snake.pop();
+}
+
 // ühendab HTML-i ID-ga
 function drawGameboard() {
+
+    gameBoardTable.innerHTML = '';
 
     for (let y = 0; y < height; y++) {
         // console.log(y);
@@ -37,7 +92,7 @@ function drawGameboard() {
 
             // kontrollima iga korral
             if (y == foodY && x == foodX) {
-                td.innerText = '🥦';
+                td.innerText = food[foodIndex];
             }
 
             if (snake.includes(y + '_' + x)) {

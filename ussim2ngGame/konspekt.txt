@@ -9,3 +9,6 @@ tabeli k6rval options (kiirus muutub, l2bi seinte)
 all message
 
 kui j6uame, siis edetabeli (kohalikus arvutis) (vasakus kyljes)
+
+kodus
+ta23-snake andruse githubis
