@@ -3,7 +3,7 @@ const gameBoardTable = document.getElementById('game-board');
 const height = 20;
 const width = 30;
 
-const food = ['A', 'B', 'C', 'D'];
+const food = ['🍉', '🍒', '🥩', '🫘', '🧀', '🥪', '🍕', '🥕'];
 
 let foodY, foodX, foodIndex;
 let direction = 'n';
