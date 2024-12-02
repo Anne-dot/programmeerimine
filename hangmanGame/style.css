@@ -1,7 +1,12 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
 .container {
     display: flex;
     flex-direction: row;
-    margin-top: 2rem;
+    margin-top: 6rem;
     justify-content: space-around;
     font-size: 2rem;
 }
@@ -18,6 +23,11 @@
     color: red;
     height: 5 rem;
     margin-top: 2rem;
+    align-items: center;
+    /* position: absolute;
+    top: 10%;
+    left: 45%;
+    transform: translate(-45%); */
 }
 
 #alphabet {
