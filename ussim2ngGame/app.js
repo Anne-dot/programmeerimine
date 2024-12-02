@@ -1,7 +1,12 @@
 const gameBoardTable = document.getElementById('game-board');
+// loome element tyypi muutuja, kus n2itame skoori
+const scoreSpan = document.getElementById('score');
+const messageDiv = document.getElementById('message');
+// high score elemendi muutuja the 
+const highScoreSpan = document.getElementById('high-score');
 
-const height = 20;
-const width = 30;
+const height = 10;
+const width = 10;
 
 const food = ['🍉', '🍒', '🥩', '🫘', '🧀', '🥪', '🍕', '🥕'];
 
@@ -9,6 +14,17 @@ let foodY, foodX, foodIndex;
 let direction = 'n';
 const speed = 200;
 let snake = initSnake();
+
+let score = 0;
+// paneme score spani sisse muutuja score v22rtuse
+scoreSpan.innerText = score;
+
+let highScore = localStorage.getItem('high_score') || 0;
+if ( !highScore ) {
+  highScore = 0;
+}
+
+highScoreSpan.innerText = highScore;
 
 document.addEventListener('keydown', e => {
     switch (e.key) {
@@ -37,8 +53,11 @@ function runGame() {
 }
 
 function generateFood() {
-    foodY = Math.floor(Math.random() * height);
-    foodX = Math.floor(Math.random() * width);
+    do {
+        foodY = Math.floor(Math.random() * height);
+        foodX = Math.floor(Math.random() * width);
+    } while (snake.includes(foodY + '_' + foodX));
+
     foodIndex = Math.floor(Math.random() * food.length);
 }
 
@@ -52,26 +71,65 @@ function initSnake() {
 function updateSnake() {
     const head = snake[0].split('_');
 
-    let newY = parseInt(head[0]);
-    let newX = parseInt(head[1]);
+    let headY = parseInt(head[0]);
+    let headX = parseInt(head[1]);
 
     switch (direction) {
+
         case 'n':
-            newY--;
+
+            if (headY == 0) {
+                headY = height - 1;
+            } else {
+                headY--;
+            }
+
             break;
+
         case 's':
-            newY++;
+            if (headY == height - 1) {
+                headY = 0;
+            } else {
+                headY++;
+            }
             break;
         case 'w':
-            newX--;
+            if (headX == 0) {
+                headX = width - 1;
+            } else {
+                headX--;
+            }
             break;
         case 'e':
-            newX++;
-            break;
+            if (headX == width - 1) {
+                headX = 0;
+            } else {
+                headX++;
+            } break;
     }
 
-    snake.unshift(newY + '_' + newX);
-    snake.pop();
+    // kontrollime, kas uus pea asukoht on ussi sees?
+    if (snake.includes(headY + '_' + headX)) {
+        messageDiv.innerText = 'Game over!';
+        messageDiv.classList.remove('hidden');
+        clearInterval(intervalId);
+
+        if (score > highScore){
+            localStorage.setItem('high_score', score)
+        }
+    }
+
+    snake.unshift(headY + '_' + headX);
+
+    if (headY == foodY && headX == foodX) {
+        generateFood();
+
+        score++;
+        scoreSpan.innerText = score;
+    } else {
+
+        snake.pop();
+    }
 }
 
 // ühendab HTML-i ID-ga

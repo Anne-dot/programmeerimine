@@ -12,3 +12,11 @@ kui j6uame, siis edetabeli (kohalikus arvutis) (vasakus kyljes)
 
 kodus
 ta23-snake andruse githubis
+
+kodut66
+json stringify edetabeli jaoks 
+vt 29.nov fotot Andruse tunnis
+options (saab l2bi seina ei saa / checkbox)
+kiirus(kasvab /ei kasva)
+
+m2ng / lokaali m2rt / tuleb baarist v2lja ja peab tuigerdama objektide vahelt l2bi.
