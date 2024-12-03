@@ -1,0 +1,17 @@
+Idee on algaja tasemel mäng, kus ruudustikku ilmub etteantud arv takistusi. 
+Mängija seisab mängu alguses paigas. Noolele vajutades hakkab ta selle suunas 
+liikuma (pm nagu ussimäng). Eesmärk on teatud ajavahemiku takistustele mitte pihta 
+minna ehk neid vältida. kui aeg läbi, siis saab aeg korda tase punkte.
+
+index.html
+favicon
+app.js
+style.css
+Tailwind CSSi lisamine?
+edetabel localis
+
+# teen ruudustiku, mis dünaamiliselt tuleb lehele +
+# panen tegelase lauale ja liikuma 
+# panen takistused
+# teen reeglid
+# näitan ja salvestan punktiseisu.
