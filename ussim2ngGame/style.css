@@ -9,6 +9,11 @@ body {
     height: 100vh;
 }
 
+#leader-board {
+    display: flex;
+    justify-content: center;
+}
+
 #game-board {
     border-collapse: collapse;
 }

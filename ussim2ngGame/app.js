@@ -5,8 +5,8 @@ const messageDiv = document.getElementById('message');
 // high score elemendi muutuja the 
 const highScoreSpan = document.getElementById('high-score');
 
-const height = 10;
-const width = 10;
+const height = 20;
+const width = 20;
 
 const food = ['🍉', '🍒', '🥩', '🫘', '🧀', '🥪', '🍕', '🥕'];
 
